@@ -1,0 +1,236 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* CSS Variables */
+:root {
+    --navbar-height: 59px;
+}
+
+/* Navigation Bar */
+#navbar {
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: rgba(2, 10, 52, 0.83); /* Adjust the opacity value as needed */
+    padding: 5px 20px;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+#navbar::before {
+    content: "";
+    background-color: rgba(16, 23, 239, 0.5); /* Adjust the opacity value as needed */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+#logo img {
+    height: var(--navbar-height);
+    transition: height 0.3s ease;
+}
+
+/* Navigation Bar: List Styling */
+#navbar ul {
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+    list-style: none;
+    font-family: 'Baloo Bhai', cursive;
+}
+
+#navbar ul li a {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#navbar ul li a:hover {
+    color: black;
+    background-color: white;
+}
+
+/* Home Section */
+#home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 75vh;
+    background: url('bg1.png') no-repeat center center/cover;
+    background-size: cover; 
+    background-attachment: fixed; 
+    color: rgb(241, 233, 233);
+    padding: 0 20px;
+    position: relative; /* Added for positioning the overlay */
+}
+
+#home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3); /* Adjust the color and opacity as needed */
+    z-index: 1;
+}
+
+#home h1, #home p {
+    position: relative;
+    z-index: 2;
+}
+
+#home h1 {
+    font-family: 'Bree Serif', serif;
+    font-size: 2.5rem;
+    transition: font-size 0.3s ease;
+}
+
+#home p {
+    font-family: 'Bree Serif', serif;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    transition: font-size 0.3s ease;
+}
+
+/* Services Section */
+#services-container {
+    padding: 50px 20px;
+}
+
+#services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.box {
+    border: 2px solid brown;
+    padding: 20px;
+    border-radius: 10px;
+    background: #f2f2f2;
+    max-width: 300px;
+    text-align: center;
+}
+
+.box img {
+    height: 160px;
+    margin: auto;
+    display: block;
+}
+
+.box p {
+    font-family: 'Bree Serif', serif;
+}
+
+/* Clients Section */
+#client-section {
+    padding: 50px 20px;
+    text-align: center;
+    position: relative;
+
+}
+
+#clients {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.client-item img {
+    height: 100px;
+}
+
+/* Contact Section */
+#contact {
+    padding: 50px 20px;
+    position: relative;
+    background: url('contact.jpg') no-repeat center center/cover;
+    background-size: cover; /* Make sure the background covers the entire section */
+    opacity: 0.7;
+}
+#contact-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#contact-box form {
+    width: 100%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#contact-box input, #contact-box textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+#contact-box label {
+    font-size: 1.2rem;
+    font-family: 'Bree Serif', serif;
+}
+
+footer {
+    background: black;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+/* Utility Classes */
+.h-primary {
+    font-family: 'Bree Serif', serif;
+    font-size: 2.5rem;
+    padding: 10px;
+}
+
+.h-secondary {
+    font-family: 'Bree Serif', serif;
+    font-size: 1.8rem;
+    padding: 10px;
+}
+
+.center {
+    text-align: center;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1170px) {
+    #navbar ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #home h1 {
+        font-size: 2rem;
+    }
+
+    #home p {
+        font-size: 1rem;
+    }
+}
